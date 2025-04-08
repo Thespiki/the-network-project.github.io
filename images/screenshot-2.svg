@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <style>
+      .bg { fill: #f0f3fa; }
+      .window { fill: white; stroke: #d0d0d0; stroke-width: 2; }
+      .header { fill: #5e7ce2; }
+      .panel { fill: #f5f5f5; stroke: #e0e0e0; stroke-width: 1; }
+      .canvas { fill: white; }
+      .ui-element { fill: #e0e0e0; }
+      .ui-active { fill: #5e7ce2; }
+      .ui-highlight { fill: #e25e5e; }
+      .chart-bg { fill: #f9f9f9; }
+      .chart-grid { stroke: #e0e0e0; stroke-width: 1; }
+      .chart-line { stroke: #5e7ce2; stroke-width: 2; fill: none; }
+      .chart-line2 { stroke: #5ee27c; stroke-width: 2; fill: none; }
+      .chart-line3 { stroke: #e2bd5e; stroke-width: 2; fill: none; }
+      .text { fill: #333; font-family: Arial; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" class="bg" />
+  
+  <!-- Application Window -->
+  <rect x="50" y="50" width="700" height="400" rx="5" class="window" />
+  
+  <!-- Window Header -->
+  <rect x="50" y="50" width="700" height="30" rx="5" class="header" />
+  <text x="70" y="70" class="text" fill="white">The Network Project - Simulation Dashboard</text>
+  
+  <!-- Left Panel (Controls) -->
+  <rect x="50" y="80" width="150" height="370" class="panel" />
+  <text x="125" y="100" class="text" text-anchor="middle">Simulation Controls</text>
+  
+  <!-- Control Buttons -->
+  <rect x="70" y="120" width="110" height="30" rx="3" class="ui-active" />
+  <text x="125" y="140" class="text" fill="white" text-anchor="middle">Start Simulation</text>
+  
+  <rect x="70" y="160" width="110" height="30" rx="3" class="ui-element" />
+  <text x="125" y="180" class="text" text-anchor="middle">Pause</text>
+  
+  <rect x="70" y="200" width="110" height="30" rx="3" class="ui-element" />
+  <text x="125" y="220" class="text" text-anchor="middle">Reset</text>
+  
+  <!-- Simulation Parameters -->
+  <text x="125" y="260" class="text" text-anchor="middle">Parameters</text>
+  
+  <text x="80" y="290" class="text" font-size="12">Traffic Load:</text>
+  <rect x="70" y="300" width="110" height="10" rx="5" class="ui-element" />
+  <rect x="70" y="300" width="70" height="10" rx="5" class="ui-active" />
+  
+  <text x="80" y="330" class="text" font-size="12">Packet Loss:</text>
+  <rect x="70" y="340" width="110" height="10" rx="5" class="ui-element" />
+  <rect x="70" y="340" width="20" height="10" rx="5" class="ui-active" />
+  
+  <text x="80" y="370" class="text" font-size="12">Latency:</text>
+  <rect x="70" y="380" width="110" height="10" rx="5" class="ui-element" />
+  <rect x="70" y="380" width="40" height="10" rx="5" class="ui-active" />
+  
+  <!-- Main Dashboard Area -->
+  <rect x="200" y="80" width="550" height="370" class="canvas" />
+  
+  <!-- Network Diagram (simplified) -->
+  <g transform="translate(270, 150) scale(0.6)">
+    <!-- Router -->
+    <rect x="350" y="200" width="50" height="30" rx="5" fill="#5e7ce2" />
+    <line x1="360" y1="200" x2="360" y2="230" stroke="white" stroke-width="1" />
+    <line x1="370" y1="200" x2="370" y2="230" stroke="white" stroke-width="1" />
+    <line x1="380" y1="200" x2="380" y2="230" stroke="white" stroke-width="1" />
+    <line x1="390" y1="200" x2="390" y2="230" stroke="white" stroke-width="1" />
+    
+    <!-- Switch 1 -->
+    <rect x="250" y="150" width="50" height="30" rx="5" fill="#5ee27c" />
+    
+    <!-- Switch 2 -->
+    <rect x="450" y="150" width="50" height="30" rx="5" fill="#5ee27c" />
+    
+    <!-- Server -->
+    <rect x="350" y="300" width="50" height="60" rx="5" fill="#e2bd5e" />
+    
+    <!-- PC 1 -->
+    <rect x="250" y="100" width="40" height="30" rx="2" fill="#e25e5e" />
+    
+    <!-- PC 2 -->
+    <rect x="460" y="100" width="40" height="30" rx="2" fill="#e25e5e" />
+    
+    <!-- Active Connections -->
+    <line x1="375" y1="200" x2="375" y2="300" stroke="#333" stroke-width="2" />
+    <line x1="375" y1="200" x2="275" y2="150" stroke="#333" stroke-width="2" />
+    <line x1="375" y1="200" x2="475" y2="150" stroke="#333" stroke-width="2" />
+    <line x1="275" y1="150" x2="270" y2="130" stroke="#333" stroke-width="2" />
+    <line x1="475" y1="150" x2="480" y2="130" stroke="#333" stroke-width="2" />
+    
+    <!-- Data packet animation -->
+    <circle cx="325" cy="175" r="5" fill="#5e7ce2" opacity="0.8" />
+    <circle cx="425" cy="175" r="5" fill="#5e7ce2" opacity="0.8" />
+    <circle cx="375" cy="250" r="5" fill="#5e7ce2" opacity="0.8" />
+  </g>
+  
+  <!-- Performance Charts -->
+  <!-- Bandwidth Usage Chart -->
+  <text x="480" y="100" class="text" font-size="14">Bandwidth Usage</text>
+  <rect x="420" y="110" width="320" height="120" class="chart-bg" rx="3" />
+  
+  <!-- Chart Grid -->
+  <line x1="420" y1="170" x2="740" y2="170" class="chart-grid" />
+  <line x1="420" y1="140" x2="740" y2="140" class="chart-grid" />
+  <line x1="420" y1="200" x2="740" y2="200" class="chart-grid" />
+  
+  <!-- Chart Data -->
+  <path d="M 420,170 
+           Q 440,160 460,180 
+           T 500,190 
+           T 540,150 
+           T 580,130 
+           T 620,140 
+           T 660,160 
+           T 700,150 
+           T 740,170" 
+        class="chart-line" />
+  
+  <!-- Packet Loss Chart -->
+  <text x="480" y="250" class="text" font-size="14">Packet Loss</text>
+  <rect x="420" y="260" width="320" height="120" class="chart-bg" rx="3" />
+  
+  <!-- Chart Grid -->
+  <line x1="420" y1="320" x2="740" y2="320" class="chart-grid" />
+  <line x1="420" y1="290" x2="740" y2="290" class="chart-grid" />
+  <line x1="420" y1="350" x2="740" y2="350" class="chart-grid" />
+  
+  <!-- Chart Data -->
+  <path d="M 420,320 
+           Q 440,320 460,325 
+           T 500,318 
+           T 540,350 
+           T 580,330 
+           T 620,328 
+           T 660,320 
+           T 700,322 
+           T 740,320" 
+        class="chart-line2" />
+  
+  <!-- Alert Indicator -->
+  <circle cx="560" cy="350" r="8" class="ui-highlight" />
+  <text x="580" y="355" class="text" font-size="12">Packet loss detected</text>
+  
+  <!-- Status Bar -->
+  <rect x="50" y="450" width="700" height="20" fill="#f0f0f0" />
+  <text x="70" y="465" class="text" font-size="12">Status: Simulation running | Elapsed Time: 00:05:32 | Network Load: 67%</text>
+</svg>
